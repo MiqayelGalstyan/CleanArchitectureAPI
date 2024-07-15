@@ -1,0 +1,15 @@
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/bin/Debug/net8.0/Application.deps.json
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/bin/Debug/net8.0/Application.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/bin/Debug/net8.0/Application.pdb
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/bin/Debug/net8.0/Domain.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/bin/Debug/net8.0/Domain.pdb
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Applicat.44B5EDA2.Up2Date
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Application.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/refint/Application.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Application.pdb
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/ref/Application.dll

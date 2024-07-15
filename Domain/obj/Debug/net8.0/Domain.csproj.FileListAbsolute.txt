@@ -1,0 +1,12 @@
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/bin/Debug/net8.0/Domain.deps.json
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/bin/Debug/net8.0/Domain.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/bin/Debug/net8.0/Domain.pdb
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/refint/Domain.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.pdb
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/ref/Domain.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
