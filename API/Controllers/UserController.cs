@@ -1,5 +1,5 @@
-using LayeredAPI.Application.Services.UserService;
 using LayeredAPI.Domain.Models.Request;
+using LayeredAPI.Infrastructure.Services.UserService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LayeredAPI.Controllers;

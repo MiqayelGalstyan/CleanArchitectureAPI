@@ -6,12 +6,11 @@ using System.Security.Claims;
 using Domain.Interfaces.Repositories.UserRepository;
 using LayeredAPI.Domain.Models.Entities.User;
 using LayeredAPI.Domain.Models.Request;
-using LayeredAPI.Domain.Models.Response;
 using LayeredAPI.Domain.Models.Response.LoginResponse;
 using LayeredAPI.Domain.Models.Response.RegisterUserResponse;
 using LayeredAPI.Infrastructure.Mappers.UserMapper;
 
-namespace LayeredAPI.Application.Services.UserService;
+namespace LayeredAPI.Infrastructure.Services.UserService;
 
 public class UserService
 {

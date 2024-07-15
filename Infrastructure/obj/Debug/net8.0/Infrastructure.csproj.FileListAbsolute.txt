@@ -17,3 +17,4 @@
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Infrastructure/obj/Debug/net8.0/ref/Infrastructure.dll
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Infrastructure/bin/Debug/net8.0/Infrastructure.runtimeconfig.json
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Infrastructure/obj/Debug/net8.0/Infrastructure.genruntimeconfig.cache
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Infrastructure/obj/Debug/net8.0/Infrastructure.sourcelink.json

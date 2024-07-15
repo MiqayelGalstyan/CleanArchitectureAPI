@@ -118,3 +118,4 @@
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/API/bin/Debug/net8.0/Newtonsoft.Json.dll
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/API/bin/Debug/net8.0/Riok.Mapperly.Abstractions.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/API/obj/Debug/net8.0/API.sourcelink.json
