@@ -1,4 +1,4 @@
-namespace LayeredAPI.Domain.Models.Response.RegisterUserResponse;
+namespace LayeredAPI.Domain.Models.Response;
 
 public class RegisterUserResponse
 {

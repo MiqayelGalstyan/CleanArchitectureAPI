@@ -1,4 +1,4 @@
-namespace LayeredAPI.Domain.Models.Response.LoginResponse;
+namespace LayeredAPI.Domain.Models.Response;
 
 public class LoginResponse
 {

@@ -1,9 +1,9 @@
-using Domain.Interfaces.Repositories.UserRepository;
-using LayeredAPI.Domain.Models.Entities.User;
+using LayeredAPI.Domain.Interfaces.Repositories;
+using LayeredAPI.Domain.Models.Entities;
 using LayeredAPI.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace LayeredAPI.Infrastructure.Repositories.UserRepository;
+namespace LayeredAPI.Infrastructure.Repositories;
 
 public class UserRepository : IUserRepository
 {

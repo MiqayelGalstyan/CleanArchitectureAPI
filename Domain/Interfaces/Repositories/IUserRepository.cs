@@ -1,7 +1,7 @@
 
-using LayeredAPI.Domain.Models.Entities.User;
+using LayeredAPI.Domain.Models.Entities;
 
-namespace Domain.Interfaces.Repositories.UserRepository;
+namespace LayeredAPI.Domain.Interfaces.Repositories;
 
 public interface IUserRepository
 {

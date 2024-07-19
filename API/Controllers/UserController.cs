@@ -1,5 +1,5 @@
+using LayeredAPI.Domain.Interfaces.Services;
 using LayeredAPI.Domain.Models.Request;
-using LayeredAPI.Infrastructure.Services.UserService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LayeredAPI.Controllers;
@@ -8,10 +8,10 @@ namespace LayeredAPI.Controllers;
 [Route("users")]
 public class UserController : ControllerBase
 {
-    private readonly UserService _userService;
+    private readonly IUserService _userService;
     private readonly string? _jwtSecretKey;
 
-    public UserController(UserService userService, IConfiguration configuration)
+    public UserController(IUserService userService, IConfiguration configuration)
     {
         _userService = userService;
         _jwtSecretKey = configuration.GetSection("AppSettings:JWTKey").Value;

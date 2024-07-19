@@ -13,3 +13,4 @@
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/refint/Application.dll
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Application.pdb
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/ref/Application.dll
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Application/obj/Debug/net8.0/Application.sourcelink.json

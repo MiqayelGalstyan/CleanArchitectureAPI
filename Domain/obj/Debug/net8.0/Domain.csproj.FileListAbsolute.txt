@@ -10,3 +10,4 @@
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.pdb
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/ref/Domain.dll
 /Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/obj/Debug/net8.0/Domain.sourcelink.json

@@ -1,5 +1,5 @@
 using Microsoft.OpenApi.Models;
-using Infrastructure.Extensions;
+using LayeredAPI.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +7,8 @@ builder.Services.ConfigureServices(builder.Configuration);
 
 // Registering controllers to handle incoming HTTP requests
 builder.Services.AddControllers();
+
+builder.Services.AddEndpointsApiExplorer();
 
 // Registering authorization services to handle role-based or policy-based authorization
 builder.Services.AddAuthorization();
@@ -19,9 +21,9 @@ builder.Services.AddSwaggerGen(options =>
     // Add JWT authentication to Swagger
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        In = ParameterLocation.Header,
-        Description = "Please enter JWT with Bearer into field",
+        Description = "JWT Authorization header using the Bearer scheme. <br> You can get access token from this endpoint <a href='/Api/Login'>/Api/Login (POST)</a> ",
         Name = "Authorization",
+        In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer"
     });

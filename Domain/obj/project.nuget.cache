@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+TtQ2wROv0lR/b1Ix+Aed0M5sNrShfURdi7q2zJiCp1B8naBWcEZ0AReWo5GRbrad3eCs9gWooiQ9nYL6HLALA==",
+  "dgSpecHash": "dZkluZ/LDOatC0d7991k7/SpFGrh9krbXnthrf3MpFvxsHHAwws/W0ZP8UX7/nom19cTI8B/YXees8Zumkyc9A==",
   "success": true,
   "projectFilePath": "/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/Domain/Domain.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "/Users/miqayelgalstyan/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.1.2/microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "/Users/miqayelgalstyan/.nuget/packages/microsoft.identitymodel.tokens/7.1.2/microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "/Users/miqayelgalstyan/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/miqayelgalstyan/.nuget/packages/riok.mapperly/3.6.0/riok.mapperly.3.6.0.nupkg.sha512",
     "/Users/miqayelgalstyan/.nuget/packages/system.identitymodel.tokens.jwt/7.1.2/system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512"
   ],
   "logs": []

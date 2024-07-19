@@ -192,6 +192,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "Riok.Mapperly": {
+              "target": "Package",
+              "version": "[3.6.0, )"
             }
           },
           "imports": [

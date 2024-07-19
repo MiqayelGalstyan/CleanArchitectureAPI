@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LayeredAPI.Domain.Models.Entities.User;
+namespace LayeredAPI.Domain.Models.Entities;
 
 public class User
 {

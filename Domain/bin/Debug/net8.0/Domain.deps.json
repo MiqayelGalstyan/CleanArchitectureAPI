@@ -9,7 +9,8 @@
       "Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
-          "Newtonsoft.Json": "13.0.3"
+          "Newtonsoft.Json": "13.0.3",
+          "Riok.Mapperly": "3.6.0"
         },
         "runtime": {
           "Domain.dll": {}
@@ -99,6 +100,14 @@
           }
         }
       },
+      "Riok.Mapperly/3.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/Riok.Mapperly.Abstractions.dll": {
+            "assemblyVersion": "3.6.0.0",
+            "fileVersion": "3.6.0.0"
+          }
+        }
+      },
       "System.IdentityModel.Tokens.Jwt/7.1.2": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "7.1.2",
@@ -174,6 +183,13 @@
       "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "Riok.Mapperly/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eQkT3evicd5fdb8HgAJjJ+uvbhfA76ozZZsBtounFrOvk0mj+9tozv1hCYV0f0cTmXIZsxtU93FMWPzd76wSaw==",
+      "path": "riok.mapperly/3.6.0",
+      "hashPath": "riok.mapperly.3.6.0.nupkg.sha512"
     },
     "System.IdentityModel.Tokens.Jwt/7.1.2": {
       "type": "package",

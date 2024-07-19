@@ -1,4 +1,4 @@
-using LayeredAPI.Domain.Models.Entities.User;
+using LayeredAPI.Domain.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace LayeredAPI.Infrastructure.Context;

@@ -3,21 +3,21 @@ using System.Text;
 using Domain.Utils;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
-using Domain.Interfaces.Repositories.UserRepository;
-using LayeredAPI.Domain.Models.Entities.User;
+using LayeredAPI.Domain.Interfaces.Repositories;
+using LayeredAPI.Domain.Interfaces.Services;
+using LayeredAPI.Domain.Models.Entities;
 using LayeredAPI.Domain.Models.Request;
-using LayeredAPI.Domain.Models.Response.LoginResponse;
-using LayeredAPI.Domain.Models.Response.RegisterUserResponse;
-using LayeredAPI.Infrastructure.Mappers.UserMapper;
+using LayeredAPI.Domain.Models.Response;
+using LayeredAPI.Infrastructure.Mappers;
 
-namespace LayeredAPI.Infrastructure.Services.UserService;
+namespace LayeredAPI.Infrastructure.Services;
 
-public class UserService
+public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
     private readonly UserMapper _mapper;
 
-    public UserService(IUserRepository userRepository,UserMapper mapper)
+    public UserService(IUserRepository userRepository, UserMapper mapper)
     {
         _mapper = mapper;
         _userRepository = userRepository;
@@ -46,11 +46,11 @@ public class UserService
     public async Task<RegisterUserResponse> RegisterAsync(RegisterUserRequest request)
     {
         PasswordUtility.CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
-       
+
         var user = _mapper.ToUser(request);
         user.PasswordHash = passwordHash;
         user.PasswordSalt = passwordSalt;
-        
+
         await _userRepository.AddUserAsync(user);
 
         return _mapper.ToRegisterUserResponse(user);

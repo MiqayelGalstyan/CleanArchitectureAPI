@@ -664,7 +664,8 @@
       "Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
-          "Newtonsoft.Json": "13.0.3"
+          "Newtonsoft.Json": "13.0.3",
+          "Riok.Mapperly": "3.6.0"
         },
         "runtime": {
           "Domain.dll": {}

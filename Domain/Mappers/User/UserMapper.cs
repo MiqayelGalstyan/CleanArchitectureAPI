@@ -1,10 +1,9 @@
 using LayeredAPI.Domain.Models.Request;
 using Riok.Mapperly.Abstractions;
-using LayeredAPI.Domain.Models.Entities.User;
-using LayeredAPI.Domain.Models.Response.RegisterUserResponse;
-using LayeredAPI.Domain.Models.Response.LoginResponse;
+using LayeredAPI.Domain.Models.Entities;
+using LayeredAPI.Domain.Models.Response;
 
-namespace LayeredAPI.Infrastructure.Mappers.UserMapper;
+namespace LayeredAPI.Infrastructure.Mappers;
 
 [Mapper]
     public partial class UserMapper

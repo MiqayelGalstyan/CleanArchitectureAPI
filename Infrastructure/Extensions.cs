@@ -1,7 +1,10 @@
 using System.Text;
-using Domain.Interfaces.Repositories.UserRepository;
+using LayeredAPI.Domain.Interfaces.Repositories;
+using LayeredAPI.Domain.Interfaces.Services;
 using LayeredAPI.Infrastructure.Context;
-using LayeredAPI.Infrastructure.Repositories.UserRepository;
+using LayeredAPI.Infrastructure.Mappers;
+using LayeredAPI.Infrastructure.Repositories;
+using LayeredAPI.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 
-namespace Infrastructure.Extensions;
+namespace LayeredAPI.Infrastructure.Extensions;
 
 public static class Extensions
 {
@@ -19,9 +22,16 @@ public static class Extensions
     {
         services.AddOptions();
         services.ConfigureDbContext(configuration);
+        services.AddSingleton<UserMapper>();
+        services.ConfigureManagerServices();
         services.AddRepositories();
         services.AddJwtAuthentication(configuration);
-        
+    }
+
+
+    private static void ConfigureManagerServices(this IServiceCollection services)
+    {
+        services.AddScoped<IUserService, UserService>();
     }
 
     private static void AddRepositories(
@@ -29,6 +39,7 @@ public static class Extensions
     {
         services.AddScoped<IUserRepository, UserRepository>();
     }
+    
 
     private static void ConfigureDbContext(this IServiceCollection services,
         IConfiguration configuration)
