@@ -1,5 +1,7 @@
+using System.Security.Claims;
 using LayeredAPI.Domain.Interfaces.Services;
 using LayeredAPI.Domain.Models.Request;
+using LayeredAPI.Infrastructure.Extensions.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LayeredAPI.Controllers;
@@ -9,12 +11,13 @@ namespace LayeredAPI.Controllers;
 public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
-    private readonly string? _jwtSecretKey;
+    private readonly string _jwtSecretKey;
 
     public UserController(IUserService userService, IConfiguration configuration)
     {
         _userService = userService;
-        _jwtSecretKey = configuration.GetSection("AppSettings:JWTKey").Value;
+        IConfigurationSection appSettings = configuration.GetSection("AppSettings");
+        _jwtSecretKey = appSettings.GetSection("JWTKey").Value;
     }
 
     [HttpPost("login")]
@@ -25,10 +28,28 @@ public class UserController : ControllerBase
             if (_jwtSecretKey != null)
             {
                 var response = await _userService.Login(loginRequest, _jwtSecretKey);
-                
-                 return Ok(response);
+
+                return Ok(response);
             }
+
             return BadRequest("Problem with JWT secret key");
+        }
+        catch (InvalidOperationException)
+        {
+            return Unauthorized("Invalid username or password");
+        }
+    }
+
+
+    [AuthorizeWithClaim(ClaimTypes.Role, "SuperAdmin")]
+    [HttpPost("registerByAdmin")]
+    public async Task<IActionResult> RegisterBySuperAdmin([FromBody] RegisterUserByAdminRequest registerUserRequest)
+    {
+        try
+        {
+            var response = await _userService.RegisterByAdminAsync(registerUserRequest);
+
+            return Ok(response);
         }
         catch (InvalidOperationException)
         {
@@ -41,9 +62,9 @@ public class UserController : ControllerBase
     {
         try
         {
-                var response = await _userService.RegisterAsync(registerUserRequest);
-                
-                return Ok(response);
+            var response = await _userService.RegisterAsync(registerUserRequest);
+
+            return Ok(response);
         }
         catch (InvalidOperationException)
         {

@@ -2,7 +2,7 @@ using System.Text;
 using LayeredAPI.Domain.Interfaces.Repositories;
 using LayeredAPI.Domain.Interfaces.Services;
 using LayeredAPI.Infrastructure.Context;
-using LayeredAPI.Infrastructure.Mappers;
+using LayeredAPI.Domain.Mappers;
 using LayeredAPI.Infrastructure.Repositories;
 using LayeredAPI.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -38,6 +38,7 @@ public static class Extensions
         this IServiceCollection services)
     {
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IRoleRepository, RoleRepository>();
     }
     
 

@@ -7,4 +7,6 @@ public interface IUserService
 {
     public  Task<LoginResponse> Login(LoginRequest loginRequest, string secretKey);
     public Task<RegisterUserResponse> RegisterAsync(RegisterUserRequest request);
+    
+    public Task<RegisterUserResponse> RegisterByAdminAsync(RegisterUserByAdminRequest request);
 }

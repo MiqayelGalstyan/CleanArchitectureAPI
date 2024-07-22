@@ -16,7 +16,9 @@ public class UserRepository : IUserRepository
 
     public async Task<User> GetUserByEmailAsync(string email)
     {
-        IQueryable<User> user = _context.Users.Where(u => u.Email.ToLower().Equals(email.ToLower()));
+        var user = _context.Users
+            .Include(u => u.Role)
+            .Where(u => u.Email.ToLower().Equals(email.ToLower()));
         return await user.FirstOrDefaultAsync();
     }
 
