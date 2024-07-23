@@ -20,6 +20,8 @@ namespace LayeredAPI.Domain.Mappers;
                 Email = user.Email,
                 ImagePath = user.ImagePath,
                 Token = token,
+                Id = user.Id,
+                RoleId = user.RoleId,
             };
         }
     }
