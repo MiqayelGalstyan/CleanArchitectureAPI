@@ -22,8 +22,7 @@ public static class Extensions
     {
         services.AddOptions();
         services.ConfigureDbContext(configuration);
-        services.AddSingleton<UserMapper>();
-        services.AddSingleton<RoleMapper>();
+        services.AddMappers();
         services.ConfigureManagerServices();
         services.AddRepositories();
         services.AddJwtAuthentication(configuration);
@@ -41,6 +40,13 @@ public static class Extensions
     {
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IRoleRepository, RoleRepository>();
+    }
+
+
+    private static void AddMappers(this IServiceCollection services)
+    {
+        services.AddSingleton<UserMapper>();
+        services.AddSingleton<RoleMapper>();
     }
     
 

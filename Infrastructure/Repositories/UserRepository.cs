@@ -27,4 +27,9 @@ public class UserRepository : IUserRepository
         await _context.AddAsync(user);
         await _context.SaveChangesAsync();
     }
+
+    public async Task<List<User>> GetUsers()
+    {
+        return await _context.Users.Include(u => u.Role).ToListAsync();
+    }
 }

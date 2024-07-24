@@ -71,4 +71,20 @@ public class UserController : ControllerBase
             return Unauthorized("Invalid username or password");
         }
     }
+
+    [HttpGet("getAllUsers")]
+    public async Task<IActionResult> GetUsers()
+    {
+        try
+        {
+            var response = await _userService.GetUsers();
+
+            return Ok(response);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw new Exception("Something went wrong");
+        }
+    }
 }

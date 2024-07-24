@@ -53,7 +53,7 @@ public class UserService : IUserService
     {
         PasswordUtility.CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
-        var user = _mapper.MapUser(request);
+        var user = _mapper.MapRegisteredUser(request);
         var role = await _roleRepository.GetRoleByName("User");
 
         user.PasswordHash = passwordHash;
@@ -64,7 +64,14 @@ public class UserService : IUserService
 
         return _mapper.MapRegisterUserResponse(user);
     }
-    
+
+    public async Task<List<UserResponse>> GetUsers()
+    {
+        var users = await _userRepository.GetUsers();
+        var userResponses = users.Select(user => _mapper.MapUser(user)).ToList();
+        return userResponses;
+    }
+
     public async Task<RegisterUserResponse> RegisterByAdminAsync(RegisterUserByAdminRequest request)
     {
         PasswordUtility.CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
