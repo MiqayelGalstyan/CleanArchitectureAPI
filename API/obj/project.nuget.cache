@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gOZSV6rES6MExc0IX7p2aJEY2XPBxAFlWos0ViyyrN64eoGv1TpoX4bbJ+ZBNiC5uvyqowFmJqi6VP5iB4nNCA==",
+  "dgSpecHash": "lZ4XFZhwuplnS/nPLW1NcJ2LbxcF0zRM3qk4SsZZzZqY89pjWR0WNY5hyZOqWyVrXcTaYxUTunaggzJNdgb+yQ==",
   "success": true,
   "projectFilePath": "/Users/miqayelgalstyan/Desktop/projects/C#/LayeredAPI/API/API.csproj",
   "expectedPackageFiles": [
@@ -36,7 +36,7 @@
     "/Users/miqayelgalstyan/.nuget/packages/microsoft.identitymodel.protocols/7.1.2/microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
     "/Users/miqayelgalstyan/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.1.2/microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "/Users/miqayelgalstyan/.nuget/packages/microsoft.identitymodel.tokens/7.1.2/microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
-    "/Users/miqayelgalstyan/.nuget/packages/microsoft.openapi/1.6.14/microsoft.openapi.1.6.14.nupkg.sha512",
+    "/Users/miqayelgalstyan/.nuget/packages/microsoft.openapi/1.6.15/microsoft.openapi.1.6.15.nupkg.sha512",
     "/Users/miqayelgalstyan/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/miqayelgalstyan/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/miqayelgalstyan/.nuget/packages/npgsql/8.0.3/npgsql.8.0.3.nupkg.sha512",

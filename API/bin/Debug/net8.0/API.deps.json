@@ -451,11 +451,11 @@
           }
         }
       },
-      "Microsoft.OpenApi/1.6.14": {
+      "Microsoft.OpenApi/1.6.15": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
-            "assemblyVersion": "1.6.14.0",
-            "fileVersion": "1.6.14.0"
+            "assemblyVersion": "1.6.15.0",
+            "fileVersion": "1.6.15.0"
           }
         }
       },
@@ -521,7 +521,7 @@
       },
       "Swashbuckle.AspNetCore.Swagger/6.6.2": {
         "dependencies": {
-          "Microsoft.OpenApi": "1.6.14"
+          "Microsoft.OpenApi": "1.6.15"
         },
         "runtime": {
           "lib/net8.0/Swashbuckle.AspNetCore.Swagger.dll": {
@@ -677,8 +677,10 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.6",
           "Microsoft.EntityFrameworkCore": "8.0.4",
           "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.OpenApi": "1.6.15",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
-          "Riok.Mapperly": "3.6.0"
+          "Riok.Mapperly": "3.6.0",
+          "Swashbuckle.AspNetCore": "6.6.2"
         },
         "runtime": {
           "Infrastructure.dll": {}
@@ -916,12 +918,12 @@
       "path": "microsoft.identitymodel.tokens/7.1.2",
       "hashPath": "microsoft.identitymodel.tokens.7.1.2.nupkg.sha512"
     },
-    "Microsoft.OpenApi/1.6.14": {
+    "Microsoft.OpenApi/1.6.15": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tTaBT8qjk3xINfESyOPE2rIellPvB7qpVqiWiyA/lACVvz+xOGiXhFUfohcx82NLbi5avzLW0lx+s6oAqQijfw==",
-      "path": "microsoft.openapi/1.6.14",
-      "hashPath": "microsoft.openapi.1.6.14.nupkg.sha512"
+      "sha512": "sha512-6w8KcyySsOf5w+ql8K/+2qct2gHkkPRq7i1VvAyvFwpgBFgZVFYK5yUOEFyyTmVT4OTkpRgr1Hy432BHC2tamg==",
+      "path": "microsoft.openapi/1.6.15",
+      "hashPath": "microsoft.openapi.1.6.15.nupkg.sha512"
     },
     "Mono.TextTemplating/2.2.1": {
       "type": "package",
