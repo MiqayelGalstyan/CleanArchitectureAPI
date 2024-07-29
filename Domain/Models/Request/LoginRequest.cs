@@ -13,4 +13,6 @@ public class LoginRequest
     [JsonProperty("password")]
     [Required(AllowEmptyStrings = false), MaxLength(200)]
     public string Password { get; set; }
+
+    public bool isRemembered { get; set; } = false;
 }

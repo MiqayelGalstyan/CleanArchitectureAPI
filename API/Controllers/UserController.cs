@@ -2,6 +2,7 @@ using System.Security.Claims;
 using LayeredAPI.Domain.Interfaces.Services;
 using LayeredAPI.Domain.Models.Request;
 using LayeredAPI.Infrastructure.Extensions.Attributes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LayeredAPI.Controllers;
@@ -39,6 +40,37 @@ public class UserController : ControllerBase
             return Unauthorized("Invalid username or password");
         }
     }
+    
+    [Authorize]
+    [HttpPost("refreshToken")]
+    public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenRequest refreshTokenRequest)
+    {
+        try
+        {
+            
+            string token = refreshTokenRequest.RefreshToken;
+
+            if (string.IsNullOrWhiteSpace(token))
+            {
+                return BadRequest("Refresh token is required.");
+            }
+            
+            if (_jwtSecretKey != null)
+            {
+                var response = await _userService.RefreshToken(token, _jwtSecretKey);
+
+                return Ok(response);
+            }
+
+            return BadRequest("Problem with JWT secret key");
+        }
+        catch (InvalidOperationException)
+        {
+            return BadRequest("Something went wrong");
+        }
+    }
+    
+    
 
 
     [AuthorizeWithClaim(ClaimTypes.Role, "SuperAdmin")]
@@ -53,7 +85,7 @@ public class UserController : ControllerBase
         }
         catch (InvalidOperationException)
         {
-            return Unauthorized("Invalid username or password");
+            throw new Exception("Something went wrong");
         }
     }
 
@@ -68,10 +100,30 @@ public class UserController : ControllerBase
         }
         catch (InvalidOperationException)
         {
-            return Unauthorized("Invalid username or password");
+            throw new Exception("Something went wrong");
         }
     }
 
+
+    [Authorize]
+    [HttpGet("/user/{id}")]
+    public async Task<IActionResult> GetProfile([FromRoute] int id)
+    {
+        try
+        {
+            var response = await _userService.GetUser(id);
+
+            return Ok(response);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw new Exception("Something went wrong");
+        }
+    }
+    
+    
+    [Authorize]
     [HttpGet("getAllUsers")]
     public async Task<IActionResult> GetUsers()
     {

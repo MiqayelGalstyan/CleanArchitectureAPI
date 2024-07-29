@@ -1,5 +1,6 @@
 using LayeredAPI.Domain.Interfaces.Repositories;
 using LayeredAPI.Domain.Models.Entities;
+using LayeredAPI.Domain.Models.Response;
 using LayeredAPI.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,6 +27,13 @@ public class UserRepository : IUserRepository
     {
         await _context.AddAsync(user);
         await _context.SaveChangesAsync();
+    }
+    
+    
+    public async Task<User> GetUser(int id)
+    {
+        var user = _context.Users.Where((User u) => u.Id.Equals(id)).Include(u => u.Role);
+        return await user.FirstOrDefaultAsync();
     }
 
     public async Task<List<User>> GetUsers()

@@ -1,4 +1,5 @@
 using System.Text;
+using Domain.Mappers.Profile;
 using LayeredAPI.Domain.Interfaces.Repositories;
 using LayeredAPI.Domain.Interfaces.Services;
 using LayeredAPI.Infrastructure.Context;
@@ -33,6 +34,7 @@ public static class Extensions
     {
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IRoleService, RoleService>();
+        services.AddScoped<IProfileService, ProfileService>();
     }
 
     private static void AddRepositories(
@@ -40,6 +42,7 @@ public static class Extensions
     {
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IRoleRepository, RoleRepository>();
+        services.AddScoped<IProfileRepository, ProfileRepository>();
     }
 
 
@@ -47,6 +50,7 @@ public static class Extensions
     {
         services.AddSingleton<UserMapper>();
         services.AddSingleton<RoleMapper>();
+        services.AddSingleton<ProfileMapper>();
     }
     
 
@@ -72,6 +76,7 @@ public static class Extensions
                         Encoding.ASCII.GetBytes(configuration.GetSection("AppSettings:JWTKey").Value)),
                 ValidateIssuer = false,
                 ValidateAudience = false,
+                ValidateLifetime = true,
                 ClockSkew = TimeSpan.Zero
             };
             options.Events = new JwtBearerEvents

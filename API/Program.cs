@@ -1,4 +1,3 @@
-using Microsoft.OpenApi.Models;
 using LayeredAPI.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
