@@ -1,0 +1,52 @@
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.csproj.user
+
+# Rider specific files
+.idea/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.suo
+*.userprefs
+
+# Dotnet specific files
+*.dbmdl
+*.bak
+*.sql
+*.mdf
+*.ldf
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+*.nupkg.old
+*.nuget/
+*.nuget\packages/
+*.nuget\restore/
+packages/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Local environment variables
+.env
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+
+# Mac specific files
+.DS_Store
+
+# Linux specific files
+.directory
