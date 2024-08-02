@@ -21,6 +21,7 @@ public static class Extensions
     public static void ConfigureServices(
         this IServiceCollection services, IConfiguration configuration)
     {
+        services.ConfigureCors();
         services.AddOptions();
         services.ConfigureDbContext(configuration);
         services.AddMappers();
@@ -89,6 +90,20 @@ public static class Extensions
                     return Task.CompletedTask;
                 }
             };
+        });
+    }
+
+    public static void ConfigureCors(this IServiceCollection services)
+    {
+        services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll",
+                policy =>
+                {
+                    policy.AllowAnyOrigin()
+                        .AllowAnyMethod()  
+                        .AllowAnyHeader(); 
+                });
         });
     }
 }
