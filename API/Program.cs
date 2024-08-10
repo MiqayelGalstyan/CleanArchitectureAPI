@@ -27,7 +27,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Adding authentication and authorization middleware to the pipeline
 app.UseCors("AllowAll");
 
 app.UseAuthentication();

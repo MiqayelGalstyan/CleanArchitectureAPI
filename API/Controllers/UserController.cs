@@ -125,11 +125,11 @@ public class UserController : ControllerBase
     
     [Authorize]
     [HttpGet("getAllUsers")]
-    public async Task<IActionResult> GetUsers()
+    public async Task<IActionResult> GetUsers([FromQuery] GetUsersRequest getUsersRequest)
     {
         try
         {
-            var response = await _userService.GetUsers();
+            var response = await _userService.GetUsers(getUsersRequest);
 
             return Ok(response);
         }

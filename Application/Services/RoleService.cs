@@ -3,7 +3,7 @@ using LayeredAPI.Domain.Interfaces.Services;
 using LayeredAPI.Domain.Mappers;
 using LayeredAPI.Domain.Models.Response;
 
-namespace LayeredAPI.Infrastructure.Services;
+namespace LayeredAPI.Application.Services;
 
 public class RoleService : IRoleService
 {

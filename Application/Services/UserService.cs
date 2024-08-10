@@ -11,7 +11,7 @@ using LayeredAPI.Domain.Models.Request;
 using LayeredAPI.Domain.Models.Response;
 using LayeredAPI.Domain.Mappers;
 
-namespace LayeredAPI.Infrastructure.Services;
+namespace LayeredAPI.Application.Services;
 
 public class UserService : IUserService
 {
@@ -100,11 +100,20 @@ public class UserService : IUserService
         return _mapper.MapRegisterUserResponse(user);
     }
 
-    public async Task<List<UserResponse>> GetUsers()
+    public async Task<PagedResult<UserResponse>> GetUsers(GetUsersRequest getUsersRequest)
     {
-        var users = await _userRepository.GetUsers();
+        var users = await _userRepository.GetUsers(getUsersRequest);
         var userResponses = users.Select(user => _mapper.MapUser(user)).ToList();
-        return userResponses;
+
+        var totalUsers = await _userRepository.GetUsersCount(getUsersRequest.SearchQuery);
+
+        return new PagedResult<UserResponse>
+        {
+            Items = userResponses,
+            TotalCount = totalUsers,
+            Page = getUsersRequest.Page,
+            Limit = getUsersRequest.Limit
+        };
     }
 
     public async Task<UserResponse> GetUser(int id)

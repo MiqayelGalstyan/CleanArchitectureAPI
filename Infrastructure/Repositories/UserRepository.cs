@@ -1,6 +1,6 @@
 using LayeredAPI.Domain.Interfaces.Repositories;
 using LayeredAPI.Domain.Models.Entities;
-using LayeredAPI.Domain.Models.Response;
+using LayeredAPI.Domain.Models.Request;
 using LayeredAPI.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,8 +36,27 @@ public class UserRepository : IUserRepository
         return await user.FirstOrDefaultAsync();
     }
 
-    public async Task<List<User>> GetUsers()
+    public async Task UpdateUserAsync(User user)
     {
-        return await _context.Users.Include(u => u.Role).ToListAsync();
+        _context.Users.Update(user);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task<List<User>> GetUsers(GetUsersRequest getUsersRequest)
+    {
+        return await _context.Users
+            .Include(u => u.Role)
+            .Where(u => string.IsNullOrEmpty(getUsersRequest.SearchQuery) || 
+                        (u.FirstName.ToLower().Contains(getUsersRequest.SearchQuery.ToLower()) || 
+                         u.LastName.ToLower().Contains(getUsersRequest.SearchQuery.ToLower())))
+            .Skip((getUsersRequest.Page - 1) * getUsersRequest.Limit) 
+            .Take(getUsersRequest.Limit)
+            .ToListAsync();
+    }
+    
+    public async Task<int> GetUsersCount(string searchQuery)
+    {
+        return await _context.Users
+            .CountAsync(u => string.IsNullOrEmpty(searchQuery) || (u.FirstName.ToLower().Contains(searchQuery.ToLower()) || u.LastName.ToLower().Contains(searchQuery.ToLower())));
     }
 }

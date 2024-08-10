@@ -5,7 +5,7 @@ using LayeredAPI.Domain.Interfaces.Services;
 using LayeredAPI.Infrastructure.Context;
 using LayeredAPI.Domain.Mappers;
 using LayeredAPI.Infrastructure.Repositories;
-using LayeredAPI.Infrastructure.Services;
+using LayeredAPI.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
