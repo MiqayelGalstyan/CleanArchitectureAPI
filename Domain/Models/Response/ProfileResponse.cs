@@ -8,4 +8,6 @@ public class ProfileResponse
     public string LastName { get; set; }
     public string ImagePath { get; set; }
     public int RoleId { get; set; }
+    
+    public string RoleName { get; set; }
 }

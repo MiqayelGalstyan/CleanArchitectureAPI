@@ -16,4 +16,6 @@ public interface IUserRepository
     Task UpdateUserAsync(User user);
 
     Task<int> GetUsersCount(string searchQuery);
+
+    Task<bool> DeleteUser(User user);
 }

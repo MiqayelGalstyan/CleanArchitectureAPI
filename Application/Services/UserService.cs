@@ -105,12 +105,12 @@ public class UserService : IUserService
         var users = await _userRepository.GetUsers(getUsersRequest);
         var userResponses = users.Select(user => _mapper.MapUser(user)).ToList();
 
-        var totalUsers = await _userRepository.GetUsersCount(getUsersRequest.SearchQuery);
+        var totalUsersCount = await _userRepository.GetUsersCount(getUsersRequest.SearchQuery);
 
         return new PagedResult<UserResponse>
         {
             Items = userResponses,
-            TotalCount = totalUsers,
+            TotalCount = totalUsersCount,
             Page = getUsersRequest.Page,
             Limit = getUsersRequest.Limit
         };
@@ -120,6 +120,13 @@ public class UserService : IUserService
     {
         var user = await _userRepository.GetUser(id);
         return _mapper.MapUser(user);
+    }
+
+    public async Task<bool> DeleteUser(int id)
+    {
+        var user = await _userRepository.GetUser(id);
+        var isDeleted = await _userRepository.DeleteUser(user);
+        return isDeleted;
     }
 
     public async Task<RegisterUserResponse> RegisterByAdminAsync(RegisterUserByAdminRequest request)

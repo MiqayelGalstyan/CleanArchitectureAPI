@@ -17,6 +17,7 @@ public partial class ProfileMapper
             ImagePath = user.ImagePath,
             Id = user.Id,
             RoleId = user.RoleId,
+            RoleName = user.Role.Name,
         };
     }
 }

@@ -13,6 +13,8 @@ public interface IUserService
     Task<PagedResult<UserResponse>> GetUsers(GetUsersRequest getUsersRequest);
     
     public Task<UserResponse> GetUser(int id);
+
+    public Task<bool> DeleteUser(int id);
     
     public Task<RegisterUserResponse> RegisterByAdminAsync(RegisterUserByAdminRequest request);
 }

@@ -40,21 +40,20 @@ public class UserController : ControllerBase
             return Unauthorized("Invalid username or password");
         }
     }
-    
+
     [Authorize]
     [HttpPost("refreshToken")]
     public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenRequest refreshTokenRequest)
     {
         try
         {
-            
             string token = refreshTokenRequest.RefreshToken;
 
             if (string.IsNullOrWhiteSpace(token))
             {
                 return BadRequest("Refresh token is required.");
             }
-            
+
             if (_jwtSecretKey != null)
             {
                 var response = await _userService.RefreshToken(token, _jwtSecretKey);
@@ -69,8 +68,6 @@ public class UserController : ControllerBase
             return BadRequest("Something went wrong");
         }
     }
-    
-    
 
 
     [AuthorizeWithClaim(ClaimTypes.Role, "SuperAdmin")]
@@ -105,6 +102,22 @@ public class UserController : ControllerBase
     }
 
 
+    [AuthorizeWithClaim(ClaimTypes.Role, "SuperAdmin")]
+    [HttpDelete("/user/{id}")]
+    public async Task<IActionResult> DeleteUser([FromRoute] int id)
+    {
+        try
+        {
+           var isDeleted = await _userService.DeleteUser(id);
+            return Ok(isDeleted);
+        }
+        catch (InvalidOperationException)
+        {
+            throw new Exception("Something went wrong");
+        }
+    }
+
+
     [Authorize]
     [HttpGet("/user/{id}")]
     public async Task<IActionResult> GetProfile([FromRoute] int id)
@@ -121,8 +134,8 @@ public class UserController : ControllerBase
             throw new Exception("Something went wrong");
         }
     }
-    
-    
+
+
     [Authorize]
     [HttpGet("getAllUsers")]
     public async Task<IActionResult> GetUsers([FromQuery] GetUsersRequest getUsersRequest)

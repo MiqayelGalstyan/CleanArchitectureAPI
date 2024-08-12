@@ -10,7 +10,19 @@ public partial class UserMapper
 {
     public partial User MapRegisteredUser(RegisterUserRequest request);
 
-    public partial UserResponse MapUser(User user);
+    public UserResponse MapUser(User user)
+    {
+        return new UserResponse
+        {
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Email = user.Email,
+            ImagePath = user.ImagePath,
+            Id = user.Id,
+            RoleId = user.RoleId,
+            RoleName = user.Role.Name,
+        };
+    }
     public partial User MapUserByAdmin(RegisterUserByAdminRequest request);
     public partial RegisterUserResponse MapRegisterUserResponse(User user);
 

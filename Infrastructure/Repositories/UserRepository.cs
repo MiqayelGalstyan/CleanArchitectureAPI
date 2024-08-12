@@ -59,4 +59,12 @@ public class UserRepository : IUserRepository
         return await _context.Users
             .CountAsync(u => string.IsNullOrEmpty(searchQuery) || (u.FirstName.ToLower().Contains(searchQuery.ToLower()) || u.LastName.ToLower().Contains(searchQuery.ToLower())));
     }
+    
+    public async Task<bool> DeleteUser(User user)
+    {
+        _context.Users.Remove(user);
+        var result = await _context.SaveChangesAsync();
+        return result > 0;
+    }
+    
 }
