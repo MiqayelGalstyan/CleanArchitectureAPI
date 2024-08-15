@@ -106,9 +106,16 @@ public class UserController : ControllerBase
     [HttpDelete("/user/{id}")]
     public async Task<IActionResult> DeleteUser([FromRoute] int id)
     {
+
+        var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+        if (currentUserId == id)
+        {
+            return BadRequest("You cannot delete yourself.");
+        }
+        
         try
         {
-           var isDeleted = await _userService.DeleteUser(id);
+            var isDeleted = await _userService.DeleteUser(id);
             return Ok(isDeleted);
         }
         catch (InvalidOperationException)

@@ -25,6 +25,10 @@ public class ProfileService : IProfileService
     public async Task<ProfileResponse> GetProfile(int id)
     {
         var userProfile = await _profileRepository.GetUserProfile(id);
+        if (!string.IsNullOrEmpty(userProfile.ImagePath))
+        {
+            userProfile.ImagePath = ImageHelper.GetImageBase64(userProfile.ImagePath, "profile");
+        }
         return _mapper.MapUserProfile(userProfile);
     }
 

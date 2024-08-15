@@ -10,15 +10,18 @@ public static class FileUploadHelper
     {
         byte[] fileDecoded = Convert.FromBase64String(imageRequest.Base64Image);
 
-        string baseDirectory = Path.Combine(AppContext.BaseDirectory, "../../../LayeredApiImages");
+        string baseDirectory = Path.Combine(AppContext.BaseDirectory, "../../../../../LayeredApiImages");
         string destinationPath = Path.Combine(baseDirectory, folder);
 
         if (!Directory.Exists(destinationPath))
         {
             Directory.CreateDirectory(destinationPath);
         }
+        
+        
+        string extension = imageRequest.Extension.StartsWith(".") ? imageRequest.Extension : "." + imageRequest.Extension;
 
-        string imagePath = Guid.NewGuid() + imageRequest.Extension;
+        string imagePath = Guid.NewGuid() + extension;
 
         string fullPath = Path.Combine(destinationPath, imagePath);
 
